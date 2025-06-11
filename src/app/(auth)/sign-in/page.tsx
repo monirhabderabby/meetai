@@ -1,5 +1,5 @@
 import { auth } from "@/lib/auth";
-import HomeView from "@/modules/home/ui/views/home-view";
+import { SignInView } from "@/modules/auth/ui/view/sign-in-view";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -8,14 +8,10 @@ const Page = async () => {
     headers: await headers(),
   });
 
-  if (!session) {
-    redirect("/sign-in");
+  if (!!session) {
+    redirect("/");
   }
-  return (
-    <div>
-      <HomeView />
-    </div>
-  );
+  return <SignInView />;
 };
 
 export default Page;
