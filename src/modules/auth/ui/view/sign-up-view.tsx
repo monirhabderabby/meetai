@@ -186,6 +186,14 @@ export const SignUpView = () => {
                     type="button"
                     className="w-full"
                     disabled={pending}
+                    onClick={() => {
+                      setError(null);
+                      setPending(true);
+                      authClient.signIn.social({
+                        provider: "google",
+                        callbackURL: "/",
+                      });
+                    }}
                   >
                     Google
                   </Button>
@@ -194,6 +202,14 @@ export const SignUpView = () => {
                     type="button"
                     className="w-full"
                     disabled={pending}
+                    onClick={() => {
+                      setPending(true);
+                      setError(null);
+                      authClient.signIn.social({
+                        provider: "github",
+                        callbackURL: "/",
+                      });
+                    }}
                   >
                     Github
                   </Button>
