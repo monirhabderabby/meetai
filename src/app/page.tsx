@@ -10,15 +10,6 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const {
-    data: session,
-    isPending, //loading state
-    error, //error object
-    refetch, //refetch the session
-  } = authClient.useSession();
-
-  console.log(session);
-
   const onSubmit = () => {
     authClient.signUp.email(
       {
