@@ -4,10 +4,10 @@ import EmptyState from "@/components/empty-state";
 import { useTRPC } from "@/trpc/client";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
+import DataPagination from "../../../../components/ui/data-pagination";
 import { DataTable } from "../../../../components/ui/datatable";
 import { useAgentFilter } from "../../hooks/use-agent-filter";
 import { agentsColumn } from "../components/column";
-import DataPagination from "../components/data-pagination";
 
 const AgentsView = () => {
   const trpc = useTRPC();
