@@ -8,7 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 const MeetingView = () => {
   const trpc = useTRPC();
   const { data } = useQuery(trpc.meetings.getMany.queryOptions({}));
-  return <div>{JSON.stringify(data?.items, null, 2)}</div>;
+  return <div>Data Table {JSON.stringify(data)}</div>;
 };
 
 export default MeetingView;
