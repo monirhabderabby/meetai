@@ -22,7 +22,7 @@ export default async function Page() {
   }
   const queryClient = getQueryClient();
 
-  await queryClient.prefetchQuery(trpc.meetings.getMany.queryOptions({}));
+  void queryClient.prefetchQuery(trpc.meetings.getMany.queryOptions({}));
 
   return (
     <>
